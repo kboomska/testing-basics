@@ -16,4 +16,24 @@ void main() {
     // Убеждаемся, что модуль ведет себя так, как ожидалось.
     expect(result, 5, reason: 'It should be exactly 5');
   });
+
+  test('The calculator creates a non null object', () {
+    // Assert (Result) -> compare the result against and expected value.
+    // Убеждаемся, что модуль ведет себя так, как ожидалось.
+    expect(Calculator(), isNotNull);
+  });
+
+  test('The calculator returns a double number when adding 1 and 4', () {
+    // Arrange (Setup) -> create the calculator object.
+    // Создается и настраивается тестируемый модуль.
+    final calculator = Calculator();
+
+    // Act (Action) -> collect the result you want to test.
+    // Запускается модуль с некоторым состоянием.
+    final result = calculator.add(1, 4);
+
+    // Assert (Result) -> compare the result against and expected value.
+    // Убеждаемся, что модуль ведет себя так, как ожидалось.
+    expect(result, isA<double>());
+  });
 }
