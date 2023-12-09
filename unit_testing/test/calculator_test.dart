@@ -113,4 +113,10 @@ void main() {
       expect(() => calculator.divide(10, 0), throwsArgumentError);
     });
   });
+
+  group('powerOfTwo', () {
+    test('The calculator returns 16 when the input is 4', () async {
+      expect(await calculator.powerOfTwo(4), 16);
+    });
+  });
 }
