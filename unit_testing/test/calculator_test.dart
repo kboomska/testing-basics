@@ -85,5 +85,20 @@ void main() {
       // Убеждаемся, что модуль ведет себя так, как ожидалось.
       expect(result, 5, reason: 'It should be exactly 5');
     });
+
+    test('The calculator throws an ArgumentError when dividing by zero', () {
+      // Arrange (Setup) -> create the calculator object.
+      // Создается и настраивается тестируемый модуль.
+      final calculator = Calculator();
+
+      // Act (Action) -> collect the result you want to test.
+      // Запускается модуль с некоторым состоянием.
+      // final result = calculator.divide(10, 0);
+
+      // Assert (Result) -> compare the result against and expected value.
+      // Убеждаемся, что модуль ведет себя так, как ожидалось.
+      // Для корректного сравнения будем передавать анонимную функцию.
+      expect(() => calculator.divide(10, 0), throwsArgumentError);
+    });
   });
 }

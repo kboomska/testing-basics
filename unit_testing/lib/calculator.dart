@@ -12,6 +12,7 @@ class Calculator {
   }
 
   double divide(double a, double b) {
+    if (b == 0) throw ArgumentError('Cannot divide by zero!');
     return a / b;
   }
 }
