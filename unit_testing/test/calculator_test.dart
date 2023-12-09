@@ -3,19 +3,23 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:unit_testing/calculator.dart';
 
 void main() {
-  setUpAll(() => print('Runs BEFORE any test is executed'));
+  late Calculator calculator;
 
-  setUp(() => print('Runs BEFORE EVERY any test is executed'));
+  // setUpAll(() => print('Runs BEFORE any test is executed'));
 
-  tearDown(() => print('Runs AFTER EVERY any test is executed'));
+  setUp(() {
+    calculator = Calculator();
+  });
 
-  tearDownAll(() => print('Runs AFTER any test is executed'));
+  // tearDown(() => print('Runs AFTER EVERY any test is executed'));
+
+  // tearDownAll(() => print('Runs AFTER any test is executed'));
 
   group('add', () {
     test('The calculator return 5 when adding 1 and 4', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
@@ -35,7 +39,7 @@ void main() {
     test('The calculator returns a double number when adding 1 and 4', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
@@ -51,7 +55,7 @@ void main() {
     test('The calculator return 5 when substracting 6 and 1', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
@@ -67,7 +71,7 @@ void main() {
     test('The calculator return 10 when multiplying 2 and 5', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
@@ -83,7 +87,7 @@ void main() {
     test('The calculator return 5 when dividing 10 and 2', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
@@ -97,7 +101,7 @@ void main() {
     test('The calculator throws an ArgumentError when dividing by zero', () {
       // Arrange (Setup) -> create the calculator object.
       // Создается и настраивается тестируемый модуль.
-      final calculator = Calculator();
+      // final calculator = Calculator();
 
       // Act (Action) -> collect the result you want to test.
       // Запускается модуль с некоторым состоянием.
