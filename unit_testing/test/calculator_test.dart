@@ -3,6 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:unit_testing/calculator.dart';
 
 void main() {
+  setUpAll(() => print('Runs BEFORE any test is executed'));
+
+  setUp(() => print('Runs BEFORE EVERY any test is executed'));
+
+  tearDown(() => print('Runs AFTER EVERY any test is executed'));
+
+  tearDownAll(() => print('Runs AFTER any test is executed'));
+
   group('add', () {
     test('The calculator return 5 when adding 1 and 4', () {
       // Arrange (Setup) -> create the calculator object.
