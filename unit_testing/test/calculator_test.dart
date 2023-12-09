@@ -119,4 +119,13 @@ void main() {
       expect(await calculator.powerOfTwo(4), 16);
     });
   });
+
+  group('fibonacciSequence', () {
+    test('The calculator returns [0, 1, 1, 2, 3, 5, 8, 13, 21]', () {
+      expect(
+        calculator.fibonacciSequence(),
+        emitsInOrder([0, 1, 1, 2, 3, 5, 8, 13, 21]),
+      );
+    });
+  });
 }
