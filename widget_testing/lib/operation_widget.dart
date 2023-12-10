@@ -40,11 +40,11 @@ class _OperationWidgetState extends State<OperationWidget> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: const Text(
-        'Operation',
-        style: TextStyle(fontSize: 20),
+      title: Text(
+        widget.operation.descriptionOperation,
+        style: const TextStyle(fontSize: 20),
       ),
-      leading: const Icon(Icons.access_time_outlined),
+      leading: widget.operation.iconOperation,
       subtitle: Column(
         children: [
           TextField(
