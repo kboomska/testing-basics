@@ -48,11 +48,17 @@ class _OperationWidgetState extends State<OperationWidget> {
       subtitle: Column(
         children: [
           TextField(
+            key: Key(
+              'textField_top_${widget.operation.descriptionOperation}',
+            ),
             controller: _topTextController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(hintText: 'Enter 1st number'),
           ),
           TextField(
+            key: Key(
+              'textField_bottom_${widget.operation.descriptionOperation}',
+            ),
             controller: _bottomTextController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(hintText: 'Enter 2nd number'),
