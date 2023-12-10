@@ -22,6 +22,7 @@ class _OperationWidgetState extends State<OperationWidget> {
   final _bottomTextController = TextEditingController();
 
   String _operationResult = '';
+  String _resultAfterAnimation = '';
 
   @override
   void initState() {
@@ -64,10 +65,26 @@ class _OperationWidgetState extends State<OperationWidget> {
             decoration: const InputDecoration(hintText: 'Enter 2nd number'),
           ),
           const SizedBox(height: 20),
-          Text(
-            'Result: $_operationResult',
-            style: Theme.of(context).textTheme.titleLarge,
-          )
+          AnimatedContainer(
+            padding: const EdgeInsets.all(8.0),
+            duration: const Duration(milliseconds: 1000),
+            onEnd: () {
+              setState(() {
+                _resultAfterAnimation = _operationResult.toString();
+              });
+            },
+            color: _operationResult.isEmpty ? Colors.transparent : Colors.green,
+            curve: Curves.easeInOut,
+            child: Text(
+              _resultAfterAnimation.isNotEmpty ? 'Result: $_resultAfterAnimation' : 'Result: ',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.end,
+            ),
+          ),
+          // Text(
+          //   'Result: $_operationResult',
+          //   style: Theme.of(context).textTheme.titleLarge,
+          // )
         ],
       ),
     );

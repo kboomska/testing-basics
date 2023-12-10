@@ -30,7 +30,10 @@ void main() {
 
       final textResultFinder = find.text('Result: 10.0');
 
-      await widgetTester.pump(); // Trigger a frame.
+      // await widgetTester.pump(); // Trigger a frame.
+
+      // Repeat pump() until there are no longer any frames scheduled.
+      await widgetTester.pumpAndSettle();
 
       expect(textResultFinder, findsOneWidget);
     });
