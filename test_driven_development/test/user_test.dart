@@ -18,4 +18,25 @@ void main() {
       expect(user.name, equals('No name'));
     });
   });
+
+  group('Custom User test', () {
+    User user1 = User(id: 1);
+    User user2 = User(name: 'Test');
+    User user3 = User(id: 1, name: 'Test');
+
+    test('Single parameter (id) is valid', () {
+      expect(user1.id, equals(1));
+      expect(user1.name, equals('No name'));
+    });
+
+    test('Single parameter (name) is valid', () {
+      expect(user2.id, equals(0));
+      expect(user2.name, equals('Test'));
+    });
+
+    test('All params are correct', () {
+      expect(user3.id, equals(1));
+      expect(user3.name, equals('Test'));
+    });
+  });
 }
