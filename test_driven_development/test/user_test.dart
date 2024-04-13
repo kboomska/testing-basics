@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:test_driven_development/entities/user.dart';
 
 void main() {
   group('Default User test', () {
