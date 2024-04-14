@@ -54,4 +54,29 @@ void main() {
       expect(user?.name, equals('Janet Weaver'));
     },
   );
+
+  test('Get User Test (failure)', () async {
+    // Arrange
+    when(
+      () => mockDio.get('https://reqres.in/api/users/23'),
+    ).thenAnswer(
+      (_) async {
+        return Future.value(
+          Response<dynamic>(
+            data: {},
+            statusCode: 404,
+            requestOptions: RequestOptions(
+              path: 'https://reqres.in/api/users/23',
+            ),
+          ),
+        );
+      },
+    );
+
+    // Act
+    User? user = await UserRemoteRepository(dio: mockDio).getUser(2);
+
+    // Assert
+    expect(user, isNull);
+  });
 }
